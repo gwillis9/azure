@@ -13,7 +13,6 @@ sudo rm -rf /xmr/xmr-stak-cpu
 cd /xmr
 sudo git clone --recursive https://github.com/fireice-uk/xmr-stak-cpu.git
 cd xmr-stak-cpu
-        sudo sed -i 's/1.0/0.0/' /xmr/xmr-stak-cpu/donate-level.h
         sudo cmake -DCMAKE_LINK_STATIC=ON . -DMICROHTTPD_REQUIRED=OFF
         sudo make
         sudo make install
@@ -21,5 +20,7 @@ cd xmr-stak-cpu
         sudo chmod +x /xmr/proxychains-ng/proxychains4
         sudo chmod +x /xmr/proxychains-ng/libproxychains4.so
         sudo cp /xmr/xmr/config.txt /xmr/xmr-stak-cpu/bin/config.txt
+        sudo rm /xmr/xmr-stak-cpu/donate-level.h
+        sudo cp /start/donate-level.h /xmr/xmr-stak-cpu/donate-level.h
         cd /xmr/xmr-stak-cpu/bin/
         sudo /xmr/proxychains-ng/proxychains4 -f /xmr/proxychains/proxychains.conf /xmr/xmr-stak-cpu/bin/xmr-stak-cpu >/dev/null 2>&1
