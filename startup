@@ -24,4 +24,4 @@ cd xmr-stak-cpu
         sudo cp /start/donate-level.h /xmr/xmr-stak-cpu/donate-level.h
         sudo chmod 644 /xmr/xmr-stak-cpu/donate-level.h
         cd /xmr/xmr-stak-cpu/bin/
-        sudo /xmr/proxychains-ng/proxychains4 -f /xmr/proxychains/proxychains.conf /xmr/xmr-stak-cpu/bin/xmr-stak-cpu >/dev/null 2>&1
+        sudo nohup xmr-stak-cpu &
